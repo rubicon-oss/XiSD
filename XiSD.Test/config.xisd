@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XiSDGenerateConfig xmlns="http://xisd.at/GenerateConfig.xsd" includeDataContractAttributes="true">
+  <Schemas>
+    <Schema>
+      <SourcePath>include</SourcePath>
+      <TargetNamespace>XiSD.Test.Include</TargetNamespace>
+    </Schema>
+    <Schema>
+      <SourcePath>main</SourcePath>
+      <TargetNamespace>XiSD.Test</TargetNamespace>
+    </Schema>
+  </Schemas>
+</XiSDGenerateConfig>

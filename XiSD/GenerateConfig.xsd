@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GenerateConfig"
+    targetNamespace="http://xisd.at/GenerateConfig.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://xisd.at/GenerateConfig.xsd"
+    xmlns:mstns="http://xisd.at/GenerateConfig.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:element name="XiSDGenerateConfig" type="GenerateConfig" />
+
+  <xs:complexType name="GenerateConfig">
+    <xs:sequence>
+      <xs:element name="Schemas" type="Schemas" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="basePath" type="xs:string" use="optional" />
+    <xs:attribute name="baseExtension" type="xs:string" use="optional" default="xsd" />
+    <xs:attribute name="generatedExtension" type="xs:string" use="optional" default=".generated.cs" />
+    <xs:attribute name="includeDataContractAttributes" type="xs:boolean" use="optional" default="false" />
+  </xs:complexType>
+
+  <xs:complexType name="Schemas">
+    <xs:sequence>
+      <xs:element name="Schema" type="Schema" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Schema">
+    <xs:sequence>
+      <xs:element name="SourcePath" type="xs:string" minOccurs="1" maxOccurs="1" />
+      <xs:element name="TargetNamespace" type="xs:string" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

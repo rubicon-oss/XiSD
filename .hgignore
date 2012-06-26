@@ -1,0 +1,12 @@
+syntax: glob
+*/*/bin/
+*/*/obj/
+*/_ReSharper.*/
+*/Debug/
+*/Release/
+~*.tmp
+_ReSharper.XiSD/*
+syntax: regexp
+.*\.user$
+.*\.orig$
+.*\.suo$

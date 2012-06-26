@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="main"
+    targetNamespace="http://xisd/test"
+    elementFormDefault="qualified"
+    xmlns="http://xisd/test"
+    xmlns:mstns="http://xisd/test"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:include schemaLocation="include.xsd" />
+
+  <xs:element name="Root" type="Root" />
+
+  <xs:complexType name="Root">
+    <xs:sequence>
+      <xs:element name="Required" type="xs:string" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Optional" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Collection" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="Complex" type="ComplexType" minOccurs="0" maxOccurs="1" />
+      <xs:element name="ComplexCollection" type="ComplexType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="attr" type="xs:int" use="required" />
+  </xs:complexType>
+  
+</xs:schema>

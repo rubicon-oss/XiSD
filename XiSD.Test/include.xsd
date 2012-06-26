@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="include"
+    targetNamespace="http://xisd/test"
+    elementFormDefault="qualified"
+    xmlns="http://xisd/test"
+    xmlns:mstns="http://xisd/test"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:complexType name="ComplexType">
+    <xs:sequence>
+      <xs:element name="Required" type="xs:string" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Optional" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Collection" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="Complex" type="AnotherType" minOccurs="0" maxOccurs="1" />
+      <xs:element name="ComplexCollection" type="AnotherType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="attr" type="xs:int" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="AnotherType">
+    <xs:sequence>
+      <xs:element name="Optional" type="xs:string" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="attr" type="xs:int" use="required" />
+  </xs:complexType>
+
+  <xs:simpleType name="Enum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="One"/>
+      <xs:enumeration value="Two"/>
+      <xs:enumeration value="Three"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="Parent">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="1">
+        <xs:element name="ChildOne" type="ChildOne" />
+        <xs:element name="ChildTwo" type="ChildTwo" />
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ChildOne">
+    <xs:sequence>
+      <xs:element name="Optional" type="xs:string" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="attr" type="xs:int" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="ChildTwo">
+    <xs:sequence>
+      <xs:element name="Optional" type="xs:string" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="attr" type="xs:int" use="required" />
+  </xs:complexType>
+
+</xs:schema>
