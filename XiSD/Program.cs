@@ -55,7 +55,7 @@ namespace XiSD
         }
 
         SchemaDictionary.Add(Path.GetFullPath(path), schema.TargetNamespace);
-        schemaDefinitions.Add (new SchemaDefinition (path, schema.TargetNamespace));
+        schemaDefinitions.Add (new SchemaDefinition (path, schema.TargetNamespace, schema.TargetXmlNamespace));
 
         index++;
       }
@@ -122,16 +122,26 @@ namespace XiSD
       AddIncludeImports(ns, includes);
       RemoveXmlRootAttributeForNoneRootTypes(ns, schemaSet);
       if (includeDataContractAttributes)
-        AddDataContractAttributes(ns);
+        AddDataContractAttributes(ns, schemaDefinition.XmlNamespace);
       
       return ns;
     }
 
-    private static void AddDataContractAttributes(CodeNamespace ns)
+    private static void AddDataContractAttributes(CodeNamespace ns, string xmlNamespace)
     {
       foreach (var type in ns.Types.OfType<CodeTypeDeclaration> ())
       {
-        type.CustomAttributes.Add (new CodeAttributeDeclaration ("System.Runtime.Serialization.DataContract"));
+        if(xmlNamespace != null)
+        {
+          type.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataContract",
+                                                                 new CodeAttributeArgument("Namespace",
+                                                                                           new CodePrimitiveExpression(
+                                                                                             xmlNamespace))));
+        }
+        else
+        {
+          type.CustomAttributes.Add(new CodeAttributeDeclaration("System.Runtime.Serialization.DataContract"));
+        }
 
         foreach (CodeTypeMember member in type.Members)
         {

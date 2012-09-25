@@ -4,6 +4,7 @@
     <Schema>
       <SourcePath>include</SourcePath>
       <TargetNamespace>XiSD.Test.Include</TargetNamespace>
+      <TargetXmlNamespace>http://www.example.org/namespaces/1.0/</TargetXmlNamespace>
     </Schema>
     <Schema>
       <SourcePath>main</SourcePath>

@@ -257,6 +257,7 @@ namespace XiSD
 
     public string SourcePath { get; set; }
     public string TargetNamespace { get; set; }
+    public string TargetXmlNamespace { get; set; }
 
     private static System.Xml.Serialization.XmlSerializer Serializer
     {

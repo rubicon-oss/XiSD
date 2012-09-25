@@ -28,6 +28,7 @@
     <xs:sequence>
       <xs:element name="SourcePath" type="xs:string" minOccurs="1" maxOccurs="1" />
       <xs:element name="TargetNamespace" type="xs:string" minOccurs="1" maxOccurs="1" />
+      <xs:element name="TargetXmlNamespace" type="xs:string" minOccurs="0" maxOccurs="1" />
     </xs:sequence>
   </xs:complexType>
 </xs:schema>
