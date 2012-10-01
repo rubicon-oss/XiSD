@@ -53,6 +53,9 @@
     <Compile Include="SchemaDefinition.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\XiSD.licenseheader">
+      <Link>XiSD.licenseheader</Link>
+    </None>
     <None Include="app.config" />
     <None Include="GenerateConfig.xsd">
       <SubType>Designer</SubType>

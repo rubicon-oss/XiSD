@@ -1,9 +1,14 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XiSD", "XiSD\XiSD.csproj", "{0D427CFB-5BEB-4F1F-9855-E888904F1151}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XiSD.Test", "XiSD.Test\XiSD.Test.csproj", "{EC8DF50F-6D50-440C-8FE4-F8BD4595E29B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E67A7C21-1A11-4C29-99AB-C3F39F3B74A1}"
+	ProjectSection(SolutionItems) = preProject
+		XiSD.licenseheader = XiSD.licenseheader
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
